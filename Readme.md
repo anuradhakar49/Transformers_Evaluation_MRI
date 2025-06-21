@@ -9,21 +9,21 @@ This repository contains code, datasets, and trained models for classifying brai
 brain-tumor-classification/
 │
 ├── data/
-│   ├── train/           # Training images (organized by class)
+│   ├── Image            # Training images (organized by class)
 │   ├── val/             # Validation images
 │   └── test/            # Test images
 │
 ├── models/
 │   ├── efficientnet_b0_model.h5   # Trained EfficientNetB0 model
-│   └── vit_model.h5               # Trained Vision Transformer model
+│   └── UNet_model.h5               # Trained Vision Transformer model
+    └── Vision transformer
+    └── Segformer (3 models for three types of tumors: Glioma, Meningioma, Pituitary)
+    └── Maskformer (3 models for three types of tumors:Glioma, Meningioma, Pituitary)
 │
 ├── notebooks/
-│   ├── data_preprocessing.ipynb   # Preprocessing and augmentation
-│   ├── model_training.ipynb       # Training and validation scripts
-│   └── model_evaluation.ipynb     # Testing and performance metrics
-│
-├── utils/
-│   └── helpers.py                 # Utility functions for data loading, plotting, etc.
+│   ├── data_loading.ipynb   # Preprocessing and augmentation
+│   ├── model_inference.ipynb       # Training and validation scripts
+│   └── model_evaluation.ipynb     # Testing and performance metrics.
 │
 ├── requirements.txt
 └── README.md
@@ -31,31 +31,29 @@ brain-tumor-classification/
 
 ## 📊 Dataset
 
-The dataset consists of grayscale MRI scans categorized into multiple brain tumor types. It is split into:
-- `train/`: For training the model.
-- `val/`: For tuning hyperparameters and validation.
-- `test/`: For final evaluation of model performance.
+The dataset consists of grayscale MRI scans categorized into multiple brain tumor types. The datasets are uploaded under two categories
+- MRI Classification: For training the model.
+- MRI Segmentation: For tuning hyperparameters and validation.
+- Each dataset is split into train, test and validation sets.
 
-Each folder contains subdirectories corresponding to tumor classes (e.g., `glioma`, `meningioma`, `pituitary`, `no_tumor`).
+The scripts to access the datasets are provided here.
 
 ## 🧠 Models
 
 This repository includes trained models:
 - **EfficientNetB0**: Lightweight CNN model using transfer learning.
 - **Vision Transformer (ViT)**: Attention-based model adapted for image patch inputs.
+- **Segformer**: Attention-based model adapted for image segmentation.
+- **Maskformer**: Attention-based model adapted for image segmentation.
 
-Both models were trained using categorical crossentropy loss and optimized using the Adam optimizer.
+## 🚀 How to use the resources
 
-## 🚀 How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/brain-tumor-classification.git
-   cd brain-tumor-classification
+1. Create a new python environment:
+   ```
    ```
 
 2. Install dependencies:
-   ```bash
+   ```
    pip install -r requirements.txt
    ```
 
@@ -67,8 +65,8 @@ Evaluation metrics include:
 - Accuracy
 - Precision, Recall, F1-Score
 - Confusion Matrix
-
-The best performing model achieved over **95% validation accuracy** and strong generalization on the test set.
+- IoU
+These metrics are implement in the notebooks folder
 
 ## 📌 Future Work
 
