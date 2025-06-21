@@ -77,9 +77,3 @@ These metrics are implement in the notebooks folder
 ## 🧾 License
 
 This project is licensed under the MIT License.
-
-## 🤝 Acknowledgements
-
-- MRI datasets from [Kaggle](https://www.kaggle.com/)
-- TensorFlow/Keras team for deep learning libraries
-- Research on Vision Transformers and EfficientNet
