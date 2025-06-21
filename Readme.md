@@ -9,10 +9,10 @@ This repository contains code, datasets, and trained models for classifying brai
 brain-tumor-classification/
 │
 ├── data/
-│   ├── Image            # Training images (organized by class)
-│   ├── val/             # Validation images
-│   └── test/            # Test images
-│
+│   ├── Classification           # Images with labels (organized by class) for brain tumor classification
+│   ├── Segmentation             # Images with masks (organized by class) for brain tumor segmentation
+
+
 ├── models/
 │   ├── efficientnet_b0_model.h5   # Trained EfficientNetB0 model
 │   └── UNet_model.h5               # Trained Vision Transformer model
