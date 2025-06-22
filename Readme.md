@@ -49,6 +49,7 @@ This repository includes trained models:
 
 1. Create a new python environment:
    ```
+   conda create -n "myenv" python=3.11.13 ipython
    ```
 
 2. Install dependencies:
