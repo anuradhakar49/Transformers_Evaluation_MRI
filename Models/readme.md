@@ -1,5 +1,5 @@
 
-# 🤗 Accessing Trained Models from Hugging Face Hub or uploaded here
+# 🤗 Accessing Trained Models for tumor classification and segmentation
 
 This guide shows how to load apre-trained models from the [Hugging Face Model Hub](https://huggingface.co/models) using the `transformers` library. Some trained models are stored on an external drive whose links are provided
 
@@ -83,6 +83,19 @@ from tensorflow.keras.layers import Input, Conv2D, Dense, Flatten, Dropout, MaxP
 from tensorflow.keras.models import Model, load_model
 
 model = load_model('path to/cnn_classification_model.h5')
+
+```
+
+---
+
+## 🔍 Example 5: Load a trained VIT  model for tumor classification (for meningioma)
+
+```python
+
+import tensorflow as tf
+from transformers import TFAutoModelForImageClassification
+
+model1 = TFAutoModelForImageClassification.from_pretrained("akar49/mri_classifier")
 
 ```
 
