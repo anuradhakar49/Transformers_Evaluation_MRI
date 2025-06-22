@@ -1,7 +1,7 @@
 
 # 🧠 Brain Tumor Classification with MRI Scans
 
-This repository contains code, datasets, and trained models for classifying brain tumors using MRI images. It includes preprocessing, training, evaluation, and visualization tools built using TensorFlow and Keras.
+This repository contains code, datasets, and trained models for classifying brain tumors using MRI images. 
 
 ## 📂 Repository Structure
 
@@ -21,9 +21,8 @@ brain-tumor-classification/
     └── Maskformer (3 models for three types of tumors:Glioma, Meningioma, Pituitary)
 │
 ├── notebooks/
-│   ├── data_loading.ipynb   # Preprocessing and augmentation
-│   ├── model_inference.ipynb       # Training and validation scripts
-│   └── model_evaluation.ipynb     # Testing and performance metrics.
+│   ├── loading_visualize_dataset.ipynb   # Loading and visualizing MRI scan and ground truth data
+│   ├── Code snippets for evaluating segmentation and classfication results  # Performance metrics.
 │
 ├── requirements.txt
 └── README.md
