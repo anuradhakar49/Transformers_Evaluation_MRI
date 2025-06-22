@@ -68,12 +68,6 @@ Evaluation metrics include:
 - IoU
 These metrics are implement in the notebooks folder
 
-## 📌 Future Work
-
-- Model explainability with Grad-CAM
-- Real-time deployment using a web app (e.g., Streamlit)
-- Integration with clinical metadata
-
 ## 🧾 License
 
 This project is licensed under the MIT License.
