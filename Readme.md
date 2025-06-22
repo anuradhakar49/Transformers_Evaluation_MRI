@@ -66,7 +66,7 @@ Evaluation metrics include:
 - Precision, Recall, F1-Score
 - Confusion Matrix
 - IoU
-These metrics are implement in the notebooks folder
+Code snippets for implementing these metrics are in the notebooks folder
 
 ## 🧾 License
 
