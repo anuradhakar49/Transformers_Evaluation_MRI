@@ -52,6 +52,9 @@ model = MaskFormerForInstanceSegmentation.from_pretrained("akar49/Maskformer-MRI
 
 ---
 
+## 🔍 Example 3: Load a trained UNet model for tumor segmentation
+The model can be downloaded from: 
+
 ## 📚 References
 
 - [Transformers Documentation](https://huggingface.co/docs/transformers)
