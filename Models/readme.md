@@ -1,7 +1,7 @@
 
-# 🤗 Accessing Trained Models from Hugging Face Hub
+# 🤗 Accessing Trained Models from Hugging Face Hub or uploaded here
 
-This guide shows how to load and use pre-trained models from the [Hugging Face Model Hub](https://huggingface.co/models) using the `transformers` library.
+This guide shows how to load and use pre-trained models from the [Hugging Face Model Hub](https://huggingface.co/models) using the `transformers` library. Some trained models are directly uploaded here which can be used for inference.
 
 ## 🛠️ Requirements
 
@@ -21,48 +21,34 @@ pip install tensorflow    # For TensorFlow
 
 ---
 
-## 🔍 Example 1: Load a trained vision transformer model for tumor classification
+## 🔍 Example 1: Load a trained Segformer model for tumor segmentation
 
 ```python
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-# Load tokenizer and model from Hugging Face Hub
-model_name = "distilbert-base-uncased-finetuned-sst-2-english"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSequenceClassification.from_pretrained(model_name)
+# Load model from Hugging Face Hub
+from transformers import SegformerFeatureExtractor, SegformerForSemanticSegmentation
+feature_extractor = SegformerFeatureExtractor.from_pretrained("nvidia/mit-b0")
 
-# Tokenize and run inference
-inputs = tokenizer("This is amazing!", return_tensors="pt")
-outputs = model(**inputs)
+model = SegformerForSemanticSegmentation.from_pretrained("akar49/Segformer-pytorch_meningioma_Jun25")
+OR
+model = SegformerForSemanticSegmentation.from_pretrained("akar49/Segformer-pytorch_pituitary_Jun25")
+OR
+model = SegformerForSemanticSegmentation.from_pretrained("akar49/Segformer-pytorch_glioma_Jun25")
 
-print(outputs.logits)
 ```
 
 ---
 
-## 🔍 Example 2: Load a trained  Segformer model for Glioma segmentation
+## 🔍 Example 2: Load a trained Maskformer model for Glioma segmentation
 
 ```python
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import MaskFormerForInstanceSegmentatio
 
-# Load tokenizer and model from Hugging Face Hub
-model_name = "distilbert-base-uncased-finetuned-sst-2-english"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSequenceClassification.from_pretrained(model_name)
-
-# Tokenize and run inference
-inputs = tokenizer("This is amazing!", return_tensors="pt")
-outputs = model(**inputs)
-
-print(outputs.logits)
-```
-
----
-
----
-
-## 🔍 Checkpoints for all odels
-
+model = MaskFormerForInstanceSegmentation.from_pretrained("akar49/Maskformer-MRI_meningiomaJun25")
+OR
+model = MaskFormerForInstanceSegmentation.from_pretrained("akar49/Maskformer-MRI_gliomaJun25")
+OR
+model = MaskFormerForInstanceSegmentation.from_pretrained("akar49/Maskformer-MRI_pituitaryJun25")
 
 ---
 
@@ -70,8 +56,4 @@ print(outputs.logits)
 
 - [Transformers Documentation](https://huggingface.co/docs/transformers)
 - [Model Hub](https://huggingface.co/models)
-
----
-
-Feel free to contribute by adding more examples or tasks (e.g. question answering, translation, summarization)!
 
