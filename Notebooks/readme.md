@@ -17,7 +17,10 @@ def calculate_iou(y_true, y_pred):
 ![image](https://github.com/user-attachments/assets/138ec646-12f1-480b-887d-38754404fcdd)
 
 ### Funtion to classfication accuracy and precision
-
+```python
 from sklearn.metrics import classification_report,confusion_matrix
 print(classification_report(y_test,pred)) # y_test are the ground truth and pred are the predicted labels by the classfier
+---
+
+```
 
