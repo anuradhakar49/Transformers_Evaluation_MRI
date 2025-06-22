@@ -1,7 +1,7 @@
 
 # 🤗 Accessing Trained Models from Hugging Face Hub or uploaded here
 
-This guide shows how to load and use pre-trained models from the [Hugging Face Model Hub](https://huggingface.co/models) using the `transformers` library. Some trained models are directly uploaded here which can be used for inference.
+This guide shows how to load apre-trained models from the [Hugging Face Model Hub](https://huggingface.co/models) using the `transformers` library. Some trained models are stored on an external drive whose links are provided
 
 ## 🛠️ Requirements
 
@@ -52,8 +52,35 @@ model = MaskFormerForInstanceSegmentation.from_pretrained("akar49/Maskformer-MRI
 
 ---
 
+```
+
+---
+
 ## 🔍 Example 3: Load a trained UNet model for tumor segmentation
-The model can be downloaded from: 
+
+The trained model may be found in the link: https://drive.google.com/file/d/1NCmgAdcuECyBDD1C3I4oHHm9kiholSzc/view?usp=drive_link
+
+```python
+import tensorflow as tf
+from tensorflow.keras.layers import Input, Conv2D, Dense, Flatten, Dropout, MaxPooling2D, BatchNormalization
+from tensorflow.keras.models import Model, load_model
+
+model = load_model('path to/Unet_model.h5')
+
+---
+
+```
+
+---
+
+## 🔍 Example 4: Load a trained CNN  model for tumor classification 
+The trained model may be found in the link: https://drive.google.com/file/d/1hOvhnw6BUwYXkcrYPowejcAylQ7K9ICZ/view?usp=drive_link 
+
+import tensorflow as tf
+from tensorflow.keras.layers import Input, Conv2D, Dense, Flatten, Dropout, MaxPooling2D, BatchNormalization
+from tensorflow.keras.models import Model, load_model
+
+model = load_model('path to/cnn_classification_model.h5')
 
 ## 📚 References
 
