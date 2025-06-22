@@ -76,11 +76,15 @@ model = load_model('path to/Unet_model.h5')
 ## 🔍 Example 4: Load a trained CNN  model for tumor classification 
 The trained model may be found in the link: https://drive.google.com/file/d/1hOvhnw6BUwYXkcrYPowejcAylQ7K9ICZ/view?usp=drive_link 
 
+```python
+
 import tensorflow as tf
 from tensorflow.keras.layers import Input, Conv2D, Dense, Flatten, Dropout, MaxPooling2D, BatchNormalization
 from tensorflow.keras.models import Model, load_model
 
 model = load_model('path to/cnn_classification_model.h5')
+
+```
 
 ## 📚 References
 
